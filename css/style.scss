@@ -1,0 +1,87 @@
+@import "variabler";
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background-color: $primaryColor;
+  height: 100vh;
+}
+
+
+@mixin knap() {
+  background-color: $primaryColor;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: block;
+  font-size: 16px;
+  border-radius: 10px;
+  margin: 10px auto 10px auto;
+}
+
+header {
+  background-color: lighten(grey, 30);
+  height: calc(100vh - 550px);
+
+  .overskrifter {
+    margin: 0;
+    padding-top: 30px;
+    text-align: center;
+  }
+}
+
+.info {
+  display: block;
+  margin: 15px auto 15px auto;
+  width: 70%;
+  height: 100%;
+  background-color: $bgcolor;
+  border-radius: 10px;
+  box-shadow: 5px 5px 5px grey;
+
+  h2 {
+    text-align: center;
+    padding: 5px;
+
+  }
+}
+
+p {
+  @extend h2
+}
+
+.button {
+  @include knap;
+}
+
+
+
+  @media #{$tablet} {
+    .flexbox{
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+    }
+
+    .info{
+      width: 40%;
+    }
+  }
+
+
+@media #{$computer} {
+  .flexbox{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+
+  .info{
+    width: 40%;
+  }
+}
